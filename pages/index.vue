@@ -1,17 +1,30 @@
 <template>
-  <div>
-    <div class="flex bg-base">
-      <div class="min-h-fit w-[300px] rounded-[15px] bg-muted p-[20px]">
-        <!-- Start From Here -->
-        {{ $t('Start-from-here') }}
+  <div class="">
+    <div class="flex">
+      <div
+        class="flex min-h-fit w-[350px] flex-col items-center justify-center space-y-5 rounded-[15px] bg-white p-[30px] lg:w-[600px]"
+      >
+        <div class="flex w-full items-center justify-between">
+          <div class="text-left">
+            <p class="text-lg font-bold">Upcoming Sessions</p>
+            <p class="text-sm">Saturday, June25, 2022</p>
+          </div>
+          <span>
+            <img src="~/assets/plus.svg" alt="test" />
+          </span>
+        </div>
+        <div class="w-full">
+          <slider />
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import slider from '~/components/slider.vue'
 export default {
-  components: {},
+  components: { slider },
   props: {},
   data() {
     return {
@@ -73,3 +86,9 @@ export default {
   methods: {},
 }
 </script>
+
+<style>
+.test-br {
+  border: 2px solid red;
+}
+</style>

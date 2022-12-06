@@ -23,6 +23,7 @@ export default {
   plugins: [
     // { src: '~/plugins/TiptapVuetify.js', mode: 'client' },
     // { src: '~/plugins/vuex-persist', ssr: false },
+    { src: '~/plugins/splide.js', mode: 'client' },
     { src: '~/plugins/i18n.js' },
     { src: '~/plugins/clickaway', mode: 'client' },
   ],

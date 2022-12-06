@@ -9,12 +9,12 @@ export default ({ app }) => {
     // construction a new VueI18n
     locale: [
       {
-        iso: 'ar-SA',
-        code: 'ar',
-      },
-      {
         iso: 'en-US',
         code: 'en',
+      },
+      {
+        iso: 'ar-SA',
+        code: 'ar',
       },
     ],
     fallbackLocale: 'ar', // always displays Chinese if English translation is not available

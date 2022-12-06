@@ -1,14 +1,21 @@
 <template>
-  <div>
+  <div class="h-screen w-screen bg-muted">
     <client-only>
-      <div
-        class="justify container mx-auto flex flex-col items-center gap-[40px] pt-[100px]"
-      >
+      <div class="mx-auto flex flex-col items-center gap-[40px] pt-[100px]">
         <div
-          class="mt-[50px] w-fit cursor-pointer rounded-[8px] bg-[#000] py-[6px] px-[11px] text-inverted hover:brightness-125"
-          @click="changeLanguage"
+          class="mt-[5px] flex w-[350px] items-start justify-start space-x-4 lg:w-[600px]"
         >
-          {{ $t('language') }}
+          <div
+            class="w-fit cursor-pointer rounded-[8px] bg-[#000] py-[6px] px-[11px] text-inverted hover:brightness-125"
+            @click="changeLanguage"
+          >
+            {{ $t('language') }}
+          </div>
+          <div
+            class="w-fit cursor-pointer rounded-[8px] bg-[#000] py-[6px] px-[11px] text-inverted hover:brightness-125"
+          >
+            Light Theme
+          </div>
         </div>
         <div :dir="lang === 'en' ? 'ltr' : 'rtl'">
           <Nuxt />

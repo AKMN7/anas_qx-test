@@ -90,6 +90,7 @@ module.exports = {
         active: 'var(--text-active)',
         disabled: 'var(--text-disabled)',
         error: 'var(--text-error)',
+        lightPurple: '#9484F7',
       },
       backgroundColor: {
         base: 'var(--bg-base)',
@@ -102,6 +103,7 @@ module.exports = {
         secondary: 'var(--btn-secondary)',
         disabled: 'var(--bg-disabled)',
         inverted: 'var(--bg-inverted)',
+        lightPurple: '#9484F7',
       },
     },
   },
