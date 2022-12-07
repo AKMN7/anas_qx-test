@@ -1,39 +1,16 @@
 <template>
   <div class="w-[90%]">
     <Splide class="keep-ltr" :options="options" @splide:moved="getNewData">
-      <SplideSlide class="date-slide">
-        <p class="mb-2">Today</p>
-        <span class="text-white">25</span>
-      </SplideSlide>
-      <SplideSlide class="date-slide">
-        <p class="mb-2">Mon</p>
-        <span class="text-white">26</span>
-      </SplideSlide>
-      <SplideSlide class="date-slide">
-        <p class="mb-2">Tue</p>
-        <span class="text-white">27</span>
-      </SplideSlide>
-      <SplideSlide class="date-slide">
-        <p class="mb-2">Wed</p>
-        <span class="text-white">28</span>
-      </SplideSlide>
-      <SplideSlide class="date-slide">
-        <p class="mb-2">Thur</p>
-        <span class="text-white">29</span>
-      </SplideSlide>
-      <SplideSlide class="date-slide">
-        <p class="mb-2">Fri</p>
-        <span class="text-white">30</span>
-      </SplideSlide>
-      <SplideSlide class="date-slide">
-        <p class="mb-2">Sat</p>
-        <span class="text-white">01</span>
+      <SplideSlide v-for="date in dates" :key="date" class="date-slide">
+        <p class="mb-2">{{ getDayName(date) }}</p>
+        <span class="text-white">{{ getDayNumber(date) }}</span>
       </SplideSlide>
     </Splide>
   </div>
 </template>
 
 <script>
+import moment from 'moment'
 export default {
   data() {
     return {
@@ -54,12 +31,25 @@ export default {
           },
         },
       },
+      dates: [],
+    }
+  },
+  created() {
+    for (let i = 0; i < 8; i++) {
+      this.dates.push(moment().add(i, 'days').format('YYYY-MM-DD'))
     }
   },
   methods: {
     getNewData(splide, prev, next) {
-      console.log(prev) // This is the moved to index
-      console.log('The Coursel Has Moved')
+      this.$emit('changeDay', this.dates[prev])
+    },
+    getDayName(date) {
+      return moment(date).isSame(moment(), 'days')
+        ? 'Today'
+        : moment(date).format('ddd')
+    },
+    getDayNumber(date) {
+      return moment(date).format('DD')
     },
   },
 }

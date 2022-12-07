@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full space-y-3">
+  <div v-if="sessions.length" class="w-full space-y-3">
     <div
       v-for="session in sessions"
       :key="session.company_name"
@@ -36,11 +36,33 @@
       </div>
     </div>
   </div>
+
+  <!-- Display No Sessions Illus if no sessions in the selected day -->
+  <div
+    v-else
+    class="flex w-full flex-col items-center justify-center space-y-3 rounded-xl border border-lightPurpleGrey p-5 text-center"
+  >
+    <img
+      src="~/assets/no-sessions.svg"
+      alt="No_Data"
+      class="h-45 w-44 lg:h-80 lg:w-80"
+    />
+    <p class="w-[200px] text-sm lg:w-[40%]">
+      You have <span class="font-bold">no upcoming sessions</span> - start
+      sharing a concersatoin with a mentor
+    </p>
+  </div>
 </template>
 
 <script>
 export default {
-  props: ['sessions'],
+  props: {
+    sessions: {
+      type: Array,
+      required: true,
+      default: () => [],
+    },
+  },
   data() {
     return {
       selectedSession: null,

@@ -1,5 +1,5 @@
 <template>
-  <div class="h-fit w-screen bg-muted py-[100px]">
+  <div class="h-fit min-h-screen w-screen bg-muted py-[100px]">
     <client-only>
       <div class="mx-auto flex flex-col items-center gap-[40px]">
         <div
