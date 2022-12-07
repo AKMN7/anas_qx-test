@@ -3,7 +3,7 @@
     <div
       v-for="session in sessions"
       :key="session.company_name"
-      class="keep-ltr cursor-pointer rounded-xl border border-lightPurpleGrey p-2"
+      class="keep-ltr cursor-pointer rounded-xl border border-lightPurpleGrey p-3"
       :class="{
         selectedSession: session.company_name === selectedSession,
       }"
@@ -23,8 +23,8 @@
 
       <div class="mt-1 flex items-center justify-start">
         <p class="text-lightPurple">
-          → {{ session.start_date.split(' ')[1] }} to
-          {{ session.end_date.split(' ')[1] }}
+          → {{ session.start_time }} to
+          {{ session.end_time }}
         </p>
       </div>
 
