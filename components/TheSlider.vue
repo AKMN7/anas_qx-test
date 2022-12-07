@@ -1,9 +1,15 @@
 <template>
   <div class="w-[90%]">
     <Splide class="keep-ltr" :options="options" @splide:moved="getNewData">
-      <SplideSlide v-for="date in dates" :key="date" class="date-slide">
-        <p class="mb-2">{{ getDayName(date) }}</p>
-        <span class="text-white">{{ getDayNumber(date) }}</span>
+      <SplideSlide
+        v-for="date in dates"
+        :key="date"
+        class="w-[75px] rounded-xl border border-borderqx py-[10px] px-4 text-center text-sm font-medium"
+      >
+        <p class="mb-2 text-unmain">{{ getDayName(date) }}</p>
+        <span class="rounded-lg bg-unselected py-1 px-2 text-unselected">{{
+          getDayNumber(date)
+        }}</span>
       </SplideSlide>
     </Splide>
   </div>
@@ -56,24 +62,6 @@ export default {
 </script>
 
 <style scopen>
-ul li.date-slide {
-  text-align: center;
-  padding: 10px 16px;
-  border: 1px solid #9297b749;
-  color: black;
-  font-size: 14px;
-  font-weight: 500;
-  border-radius: 12px;
-  width: 75px;
-}
-
-ul li.date-slide span {
-  color: #5b628a;
-  border-radius: 8px;
-  background-color: rgba(146, 151, 183, 0.16);
-  padding: 4px 8px;
-}
-
 ul li.is-active {
   border: 2px solid #9484f7;
   color: #9484f7;
@@ -83,10 +71,15 @@ ul li.is-active span {
   color: white;
   background-color: #9484f7;
 }
+
+ul li.is-active p {
+  color: #9484f7 !important;
+}
 .splide__arrow {
   background: transparent !important;
   height: 10px !important;
   width: 10px !important;
+  color: red;
 }
 
 .splide__arrow--prev {

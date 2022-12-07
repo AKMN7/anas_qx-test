@@ -3,7 +3,7 @@
     <div
       v-for="session in sessions"
       :key="session.company_name"
-      class="keep-ltr cursor-pointer rounded-xl border border-lightPurpleGrey p-3"
+      class="keep-ltr cursor-pointer rounded-xl border border-lightPurpleGrey p-3 text-base-color"
       :class="{
         selectedSession: session.company_name === selectedSession,
       }"
@@ -13,7 +13,7 @@
         <img
           :src="session.company_logo"
           alt="Logo"
-          class="h-10 w-10 rounded-xl border border-lightPurpleGrey"
+          class="h-10 w-10 rounded-xl border border-borderqx"
         />
         <div class="flex w-fit flex-col py-1 px-2">
           <p class="text-sm font-bold">{{ session.company_name }}</p>
@@ -29,7 +29,12 @@
       </div>
 
       <div class="cta-btns mt-3 flex items-center justify-start">
-        <button class="rounded-xl bg-purple py-2 px-4 text-white">Join</button>
+        <button
+          class="rounded-xl bg-purple py-2 px-4 text-white"
+          @click="goToLink(session.zoom_link)"
+        >
+          Join
+        </button>
         <button class="border- ml-3 rounded-xl py-2 px-4 hover:font-bold">
           Dismiss
         </button>
@@ -48,8 +53,9 @@
       class="h-45 w-44 lg:h-80 lg:w-80"
     />
     <p class="w-[200px] text-sm lg:w-[40%]">
-      You have <span class="font-bold">no upcoming sessions</span> - start
-      sharing a concersatoin with a mentor
+      {{ $t('No-Sessions-0') }}
+      <span class="font-bold">{{ $t('No-Sessions-1') }}</span>
+      {{ $t('No-Sessions-2') }}.
     </p>
   </div>
 </template>
@@ -72,6 +78,23 @@ export default {
     showBtns(name) {
       this.selectedSession = name
     },
+    goToLink(link) {
+      window.open(link)
+    },
   },
 }
 </script>
+
+<style scoped>
+.selectedSession {
+  background-color: rgba(148, 132, 247, 0.08);
+}
+
+.selectedSession .cta-btns {
+  display: block !important;
+}
+
+.cta-btns {
+  display: none;
+}
+</style>

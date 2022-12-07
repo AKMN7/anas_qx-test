@@ -4,5 +4,10 @@
   "sar": "ريال",
   "point": "نقطة",
   "Start-from-here": "ابدأ من هنا",
-  "Upcoming-Sessions": "الجلسات القادمة"
+  "Upcoming-Sessions": "الجلسات القادمة",
+  "No-Sessions-0": "أنت",
+  "No-Sessions-1": "ليس لديك جلسات قادمة",
+  "No-Sessions-2": "- ابدأ في مشاركة محادثة مع مرشد",
+  "Dark-Theme": "المظهر الداكن",
+  "Light-Theme": "المظهر المضيء"
 }

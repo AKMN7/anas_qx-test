@@ -3,19 +3,16 @@
     <client-only>
       <div class="mx-auto flex flex-col items-center gap-[40px]">
         <div
-          class="mt-[5px] flex w-[350px] items-start justify-start space-x-4 lg:w-[600px]"
+          :dir="lang === 'en' ? 'ltr' : 'rtl'"
+          class="mt-[5px] flex w-[350px] items-center lg:w-[600px]"
         >
           <div
-            class="w-fit cursor-pointer rounded-[8px] bg-[#000] py-[6px] px-[11px] text-inverted hover:brightness-125"
+            class="mx-1 w-fit cursor-pointer rounded-[8px] bg-cardbg py-[6px] px-[11px] text-base-color shadow-xl hover:brightness-125"
             @click="changeLanguage"
           >
             {{ $t('language') }}
           </div>
-          <div
-            class="w-fit cursor-pointer rounded-[8px] bg-[#000] py-[6px] px-[11px] text-inverted hover:brightness-125"
-          >
-            Light Theme
-          </div>
+          <dark-theme-btn />
         </div>
         <div :dir="lang === 'en' ? 'ltr' : 'rtl'">
           <Nuxt />
@@ -26,8 +23,11 @@
 </template>
 
 <script>
+import DarkThemeBtn from '~/components/DarkThemeBtn.vue'
 export default {
-  components: {},
+  components: {
+    DarkThemeBtn,
+  },
   props: {},
   data() {
     return {

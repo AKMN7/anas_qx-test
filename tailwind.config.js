@@ -91,7 +91,8 @@ module.exports = {
         active: 'var(--text-active)',
         disabled: 'var(--text-disabled)',
         error: 'var(--text-error)',
-        lightPurple: '#5B628A',
+        unselected: 'var(--text-unselected)',
+        unmain: 'var(--text-unmain)',
         lightPurpleGrey: '#9297b749',
       },
       backgroundColor: {
@@ -105,8 +106,13 @@ module.exports = {
         secondary: 'var(--btn-secondary)',
         disabled: 'var(--bg-disabled)',
         inverted: 'var(--bg-inverted)',
+        cardbg: 'var(--card-base)',
+        unselected: 'var(--bg-unselected)',
         purple: '#9484F7',
         lightPurpleGrey: '#9297b749',
+      },
+      borderColor: {
+        borderqx: 'var(--border-qx)',
       },
     },
   },
