@@ -5,66 +5,26 @@
         class="flex min-h-fit w-[375px] flex-col items-center justify-center space-y-5 rounded-[15px] bg-white p-[30px] lg:w-[600px]"
       >
         <div class="flex w-full items-center justify-between">
-          <div class="text-left">
+          <div>
             <p class="text-lg font-bold">Upcoming Sessions</p>
             <p class="text-sm">Saturday, June25, 2022</p>
           </div>
-          <span>
-            <img src="~/assets/plus.svg" alt="Plus_Icon" class="h-5 w-5" />
-          </span>
+          <p class="mx-2 text-3xl">&plus;</p>
         </div>
-        <div class="w-[90%]">
-          <Slider />
-        </div>
-        <div class="w-full space-y-3">
-          <div
-            v-for="session in sessions"
-            :key="session.company_name"
-            class="keep-ltr cursor-pointer rounded-xl border border-lightPurpleGrey p-2"
-            :class="{
-              selectedSession: session.company_name === selectedSession,
-            }"
-            @click="showBtns(session.company_name)"
-          >
-            <div class="space-2 flex items-center justify-start">
-              <img
-                :src="session.company_logo"
-                alt="Logo"
-                class="h-10 w-10 rounded-xl border border-lightPurpleGrey"
-              />
-              <div class="flex w-fit flex-col py-1 px-2">
-                <p class="text-sm font-bold">{{ session.company_name }}</p>
-                <p>{{ session.company_description }}</p>
-              </div>
-            </div>
-
-            <div class="mt-1 flex items-center justify-start">
-              <p class="text-lightPurple">
-                → {{ session.start_date.split(' ')[1] }} to
-                {{ session.end_date.split(' ')[1] }}
-              </p>
-            </div>
-
-            <div class="cta-btns mt-3 flex items-center justify-start">
-              <button class="rounded-xl bg-purple py-2 px-4 text-white">
-                Join
-              </button>
-              <button class="border- ml-3 rounded-xl py-2 px-4 hover:font-bold">
-                Dismiss
-              </button>
-            </div>
-          </div>
-        </div>
+        <the-slider />
+        <the-session-list :sessions="sessions" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import Slider from '~/components/Slider.vue'
+import TheSlider from '~/components/TheSlider.vue'
+import TheSessionList from '~/components/TheSessionList.vue'
 export default {
   components: {
-    Slider,
+    TheSlider,
+    TheSessionList,
   },
   props: {},
   data() {
@@ -117,18 +77,12 @@ export default {
           zoom_link: 'https://zoom.us/j/1234567890?pwd=1234567890',
         },
       ],
-      selectedSession: null,
     }
   },
   head: {},
   computed: {},
   watch: {},
   mounted() {},
-  methods: {
-    showBtns(name) {
-      this.selectedSession = name
-    },
-  },
 }
 </script>
 
