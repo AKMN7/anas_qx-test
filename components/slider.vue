@@ -1,5 +1,5 @@
 <template>
-  <Splide :options="options" @splide:moved="getNewData">
+  <Splide class="keep-ltr" :options="options" @splide:moved="getNewData">
     <SplideSlide class="date-slide">
       <p class="mb-2">Today</p>
       <span class="text-white">25</span>
@@ -38,19 +38,17 @@ export default {
       options: {
         type: 'loop',
         rewind: true,
-        gap: '15px',
+        gap: '10px',
         perPage: 5,
         perMove: 1,
         pagination: false,
         focus: 'center',
         trimSpace: true,
-        direction: this.$i18n.locale === 'en' ? 'ltr' : 'rtl',
         start: 0,
-        padding: { left: 5, right: 5 },
+        padding: { left: '8px', right: '8px' },
         breakpoints: {
-          768: {
+          1022: {
             perPage: 3,
-            gap: '8px',
           },
         },
       },
@@ -69,27 +67,40 @@ export default {
 ul li.date-slide {
   text-align: center;
   padding: 10px 16px;
-  border: 2px solid #cccccc;
+  border: 1px solid #9297b749;
   color: black;
+  font-size: 14px;
   font-weight: 500;
-  border-radius: 16px;
+  border-radius: 12px;
   width: 75px;
 }
 
 ul li.date-slide span {
-  border-radius: 12px;
-  background-color: #a1a0a1;
+  color: #5b628a;
+  border-radius: 8px;
+  background-color: rgba(146, 151, 183, 0.16);
   padding: 4px 8px;
 }
 
 ul li.is-active {
-  border: 3px solid #9484f7;
+  border: 2px solid #9484f7;
   color: #9484f7;
 }
 
 ul li.is-active span {
-  border-radius: 12px;
+  color: white;
   background-color: #9484f7;
-  padding: 4px 8px;
+}
+.splide__arrow {
+  background: transparent !important;
+  height: 10px !important;
+  width: 10px !important;
+}
+
+.splide__arrow--prev {
+  left: -18px !important;
+}
+.splide__arrow--next {
+  right: -18px !important;
 }
 </style>

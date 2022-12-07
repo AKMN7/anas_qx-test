@@ -1,7 +1,7 @@
 <template>
-  <div class="h-screen w-screen bg-muted">
+  <div class="h-fit w-screen bg-muted py-[100px]">
     <client-only>
-      <div class="mx-auto flex flex-col items-center gap-[40px] pt-[100px]">
+      <div class="mx-auto flex flex-col items-center gap-[40px]">
         <div
           class="mt-[5px] flex w-[350px] items-start justify-start space-x-4 lg:w-[600px]"
         >

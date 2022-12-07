@@ -13,6 +13,7 @@ module.exports = {
       'muted-btn': 'var(--border-muted-btn)',
       primary: 'var(--border-primary)',
       inverted: 'var(--border-inverted)',
+      lightPurpleGrey: '#9297b749',
     }),
 
     screens: {
@@ -90,7 +91,8 @@ module.exports = {
         active: 'var(--text-active)',
         disabled: 'var(--text-disabled)',
         error: 'var(--text-error)',
-        lightPurple: '#9484F7',
+        lightPurple: '#5B628A',
+        lightPurpleGrey: '#9297b749',
       },
       backgroundColor: {
         base: 'var(--bg-base)',
@@ -103,7 +105,8 @@ module.exports = {
         secondary: 'var(--btn-secondary)',
         disabled: 'var(--bg-disabled)',
         inverted: 'var(--bg-inverted)',
-        lightPurple: '#9484F7',
+        purple: '#9484F7',
+        lightPurpleGrey: '#9297b749',
       },
     },
   },
