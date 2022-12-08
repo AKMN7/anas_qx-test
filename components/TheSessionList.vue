@@ -1,8 +1,12 @@
 <template>
-  <div v-if="sessions.length" class="w-full space-y-3">
+  <div
+    v-if="sessions.length"
+    v-on-clickaway="clickAway"
+    class="w-full space-y-3"
+  >
     <div
       v-for="session in sessions"
-      :key="session.company_name"
+      :key="session.session_id"
       class="keep-ltr cursor-pointer rounded-xl border border-lightPurpleGrey p-3 text-base-color"
       :class="{
         selectedSession: session.company_name === selectedSession,
@@ -22,7 +26,7 @@
       </div>
 
       <div class="mt-1 flex items-center justify-start">
-        <p class="text-lightPurple">
+        <p class="text-unselected">
           → {{ session.start_time }} to
           {{ session.end_time }}
         </p>
@@ -35,7 +39,10 @@
         >
           Join
         </button>
-        <button class="border- ml-3 rounded-xl py-2 px-4 hover:font-bold">
+        <button
+          class="border- ml-3 rounded-xl py-2 px-4 hover:font-bold"
+          @click="$emit('removeSession', session.session_id)"
+        >
           Dismiss
         </button>
       </div>
@@ -45,14 +52,14 @@
   <!-- Display No Sessions Illus if no sessions in the selected day -->
   <div
     v-else
-    class="flex w-full flex-col items-center justify-center space-y-3 rounded-xl border border-lightPurpleGrey p-5 text-center"
+    class="flex w-full flex-col items-center justify-center space-y-10 rounded-xl border border-lightPurpleGrey py-20 px-5 text-center"
   >
     <img
       src="~/assets/no-sessions.svg"
       alt="No_Data"
       class="h-45 w-44 lg:h-80 lg:w-80"
     />
-    <p class="w-[200px] text-sm lg:w-[40%]">
+    <p class="w-[200px] text-sm text-base-color lg:w-[40%]">
       {{ $t('No-Sessions-0') }}
       <span class="font-bold">{{ $t('No-Sessions-1') }}</span>
       {{ $t('No-Sessions-2') }}.
@@ -75,11 +82,17 @@ export default {
     }
   },
   methods: {
+    // Update the selectedSession
     showBtns(name) {
       this.selectedSession = name
     },
+    // Navigate user to a zoom link
     goToLink(link) {
       window.open(link)
+    },
+    // Click away funciton to hide CTA buttons
+    clickAway() {
+      this.selectedSession = null
     },
   },
 }
