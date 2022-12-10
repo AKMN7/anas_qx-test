@@ -1,7 +1,7 @@
 <template>
   <div class="flex">
     <div
-      class="flex min-h-fit w-[90vw] flex-col items-center justify-center space-y-5 rounded-[15px] bg-cardbg p-[20px] shadow-xl lg:w-[80vw]"
+      class="flex min-h-fit w-[90vw] flex-col items-center justify-center space-y-5 rounded-[15px] bg-cardbg p-[20px] shadow-xl lg:w-[900px]"
     >
       <div class="flex w-full items-center justify-between text-base-color">
         <div>

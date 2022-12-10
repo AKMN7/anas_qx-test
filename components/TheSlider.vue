@@ -1,14 +1,22 @@
 <template>
   <div class="w-[90%]">
-    <Splide class="keep-ltr" :options="options" @splide:moved="getNewData">
+    <Splide
+      class="keep-ltr"
+      :options="options"
+      @splide:moved="getNewData"
+      @splide:click="updateDate"
+      @splide:ready="populateDays"
+    >
       <SplideSlide
         v-for="date in dates"
-        :key="date"
-        class="w-[75px] rounded-xl border border-borderqx py-[10px] px-4 text-center text-sm font-medium"
+        :key="date.fullDate"
+        class="w-[75px] cursor-pointer rounded-xl border border-borderqx py-[10px] px-4 text-center text-sm font-medium"
       >
-        <p class="mb-2 text-unmain">{{ getDayName(date) }}</p>
+        <p class="mb-2 text-unmain">
+          {{ date.dayName === 'Today' ? $t('Today') : date.dayName }}
+        </p>
         <span class="rounded-lg bg-unselected py-1 px-2 text-unselected">{{
-          getDayNumber(date)
+          date.dayNumber
         }}</span>
       </SplideSlide>
     </Splide>
@@ -24,48 +32,58 @@ export default {
         type: 'loop',
         rewind: true,
         gap: '10px',
-        perPage: 5,
+        perPage: 3,
         perMove: 1,
         pagination: false,
-        focus: 'center',
-        trimSpace: true,
         start: 0,
+        focus: 'center',
+        trimSpace: false,
         padding: { left: '8px', right: '8px' },
-        breakpoints: {
-          1022: {
-            perPage: 3,
-          },
-        },
       },
       dates: [],
     }
   },
+  watch: {
+    '$i18n.locale'(newValue, oldValue) {
+      this.populateDays()
+    },
+  },
   created() {
-    // Store the upcoming seven days using moment.js
-    for (let i = 0; i < 8; i++) {
-      this.dates.push(moment().add(i, 'days').format('YYYY-MM-DD'))
-    }
+    this.populateDays()
   },
   methods: {
+    // Populate Seven days from now
+    populateDays() {
+      this.dates = []
+      // Store the upcoming seven days using moment.js
+      for (let i = 0; i < 7; i++) {
+        const dateString = moment().add(i, 'days').format('YYYY-MM-DD')
+        this.dates.push({
+          fullDate: dateString,
+          dayName: moment(dateString).isSame(moment(), 'days')
+            ? 'Today'
+            : moment(dateString).format('ddd'),
+          dayNumber: moment(dateString).format('DD'),
+        })
+      }
+    },
     // Fire changeDay emit while passing the newly selected date
     getNewData(splide, prev, next) {
-      this.$emit('changeDay', this.dates[prev])
+      this.$emit('changeDay', this.dates[prev].fullDate)
     },
-    // Return approprite string to disply as a day name
-    getDayName(date) {
-      return moment(date).isSame(moment(), 'days')
-        ? 'Today'
-        : moment(date).format('ddd')
-    },
-    // Get the number of day passed
-    getDayNumber(date) {
-      return moment(date).format('DD')
+    // Update The date by user clicks
+    updateDate(obj, splide) {
+      obj.go(splide.index)
     },
   },
 }
 </script>
 
 <style>
+ul li:hover {
+  background-color: #9484f714;
+}
+
 ul li.is-active {
   border: 2px solid #9484f7;
   color: #9484f7;

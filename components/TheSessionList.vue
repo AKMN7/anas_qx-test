@@ -7,7 +7,7 @@
     <div
       v-for="session in sessions"
       :key="session.session_id"
-      class="keep-ltr w-full cursor-pointer rounded-xl border border-lightPurpleGrey p-3 text-base-color"
+      class="keep-ltr session w-full cursor-pointer rounded-xl border border-lightPurpleGrey p-3 text-base-color"
       :class="{
         selectedSession: session.company_name === selectedSession,
       }"
@@ -102,8 +102,12 @@ export default {
 </script>
 
 <style scoped>
+.session:hover {
+  background-color: #9484f714;
+}
+
 .selectedSession {
-  background-color: rgba(148, 132, 247, 0.08);
+  background-color: #9484f714;
 }
 
 .selectedSession .cta-btns {
