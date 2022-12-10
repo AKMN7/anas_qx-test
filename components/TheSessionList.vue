@@ -13,6 +13,7 @@
       }"
       @click="showBtns(session.company_name)"
     >
+      <!-- Session Company Info -->
       <div class="space-2 flex items-center justify-start">
         <img
           :src="session.company_logo"
@@ -25,6 +26,7 @@
         </div>
       </div>
 
+      <!-- Session Time -->
       <div class="mt-1 flex items-center justify-start">
         <p class="text-unselected">
           → {{ session.start_time }} to
@@ -32,6 +34,7 @@
         </p>
       </div>
 
+      <!-- Sessoin CTA Buttons -->
       <div class="cta-btns mt-3 flex items-center justify-start">
         <button
           class="rounded-xl bg-purple py-2 px-4 text-white"
@@ -57,7 +60,7 @@
     <img
       src="~/assets/no-sessions.svg"
       alt="No_Data"
-      class="h-45 w-44 lg:h-80 lg:w-80"
+      class="h-44 w-44 lg:h-56 lg:w-56"
     />
     <p class="w-[200px] text-sm text-base-color lg:w-[40%]">
       {{ $t('No-Sessions-0') }}

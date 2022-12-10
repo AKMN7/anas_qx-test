@@ -34,11 +34,8 @@ export default {
       lang: 'ar',
     }
   },
-  head: {},
-  computed: {},
-  watch: {},
-  mounted() {},
   methods: {
+    // Change the global selected languate (i18n)
     changeLanguage() {
       if (this.lang === 'ar') {
         this.lang = 'en'

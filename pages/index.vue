@@ -8,7 +8,7 @@
           <p class="text-lg font-bold">
             {{ $t('Upcoming-Sessions') }}
           </p>
-          <p class="text-sm">Saturday, June 25, 2022</p>
+          <p class="text-sm">{{ longFormatDate(selectedDay) }}</p>
         </div>
         <p class="mx-2 text-3xl">&plus;</p>
       </div>
@@ -179,8 +179,8 @@ export default {
     }
   },
   watch: {
+    // Watch and Filter out all sessions with the same date as the selcted date
     selectedDay(newValue) {
-      // Watch and Filter out all sessions with the same date as the selcted date
       this.sessionsToDisplay = this.sessions.filter(
         (el) => el.session_date === newValue
       )
@@ -191,9 +191,11 @@ export default {
     this.selectedDay = moment().add(0, 'days').format('YYYY-MM-DD')
   },
   methods: {
+    // Update the selected day to the newly selected day
     updateSessions(newDate) {
       this.selectedDay = newDate
     },
+    // Remove a session (bt it's ID) from the session list according
     removeSessionById(id) {
       // Prompt the user to confirm removal
       const response = confirm(`Are you sure you want to Dismiss this session?`)
@@ -211,6 +213,9 @@ export default {
           alert('Session Removed')
         }, 100)
       }
+    },
+    longFormatDate(date) {
+      return moment(date).format('dddd, MMMM DD YYYY')
     },
   },
 }

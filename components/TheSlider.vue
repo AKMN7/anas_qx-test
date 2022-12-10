@@ -41,19 +41,23 @@ export default {
     }
   },
   created() {
+    // Store the upcoming seven days using moment.js
     for (let i = 0; i < 8; i++) {
       this.dates.push(moment().add(i, 'days').format('YYYY-MM-DD'))
     }
   },
   methods: {
+    // Fire changeDay emit while passing the newly selected date
     getNewData(splide, prev, next) {
       this.$emit('changeDay', this.dates[prev])
     },
+    // Return approprite string to disply as a day name
     getDayName(date) {
       return moment(date).isSame(moment(), 'days')
         ? 'Today'
         : moment(date).format('ddd')
     },
+    // Get the number of day passed
     getDayNumber(date) {
       return moment(date).format('DD')
     },
@@ -61,7 +65,7 @@ export default {
 }
 </script>
 
-<style scopen>
+<style>
 ul li.is-active {
   border: 2px solid #9484f7;
   color: #9484f7;

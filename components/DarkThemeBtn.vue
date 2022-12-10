@@ -17,6 +17,7 @@ export default {
     }
   },
   mounted() {
+    // Check if the prefered theme was previously set by the user through localstorage
     if (localStorage.getItem('mode')) {
       this.mode = localStorage.getItem('mode')
       if (this.mode === 'dark') document.documentElement.classList.add('dark')
@@ -25,6 +26,7 @@ export default {
     }
   },
   methods: {
+    // Toggle the selected theme and update the prefered theme in localstorage
     toggleDarkTheme() {
       if (this.mode === 'light') {
         this.mode = 'dark'
