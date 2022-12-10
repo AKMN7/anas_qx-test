@@ -75,11 +75,20 @@ ul li.is-active span {
 ul li.is-active p {
   color: #9484f7 !important;
 }
+
+/* SLIDER ARROW FORCEFULL EDIT (BAD PRACTIVE) */
 .splide__arrow {
   background: transparent !important;
   height: 10px !important;
   width: 10px !important;
-  color: red;
+}
+
+.dark .splide__arrow svg {
+  fill: #dddddd;
+}
+
+.splide__arrow svg {
+  fill: #282c41;
 }
 
 .splide__arrow--prev {

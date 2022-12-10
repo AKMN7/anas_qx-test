@@ -2,12 +2,12 @@
   <div
     v-if="sessions.length"
     v-on-clickaway="clickAway"
-    class="w-full space-y-3"
+    class="keep-ltr grid w-full grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3"
   >
     <div
       v-for="session in sessions"
       :key="session.session_id"
-      class="keep-ltr cursor-pointer rounded-xl border border-lightPurpleGrey p-3 text-base-color"
+      class="keep-ltr w-full cursor-pointer rounded-xl border border-lightPurpleGrey p-3 text-base-color"
       :class="{
         selectedSession: session.company_name === selectedSession,
       }"

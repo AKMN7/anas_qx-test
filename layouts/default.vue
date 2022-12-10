@@ -4,7 +4,7 @@
       <div class="mx-auto flex flex-col items-center gap-[40px]">
         <div
           :dir="lang === 'en' ? 'ltr' : 'rtl'"
-          class="mt-[5px] flex w-[350px] items-center lg:w-[600px]"
+          class="mt-[5px] flex w-[90vw] items-center lg:w-[80vw]"
         >
           <div
             class="mx-1 w-fit cursor-pointer rounded-[8px] bg-cardbg py-[6px] px-[11px] text-base-color shadow-xl hover:brightness-125"

@@ -1,7 +1,7 @@
 <template>
   <div class="flex">
     <div
-      class="dark:bg-red flex min-h-fit w-[375px] flex-col items-center justify-center space-y-5 rounded-[15px] bg-cardbg p-[30px] shadow-xl lg:w-[600px]"
+      class="flex min-h-fit w-[90vw] flex-col items-center justify-center space-y-5 rounded-[15px] bg-cardbg p-[20px] shadow-xl lg:w-[80vw]"
     >
       <div class="flex w-full items-center justify-between text-base-color">
         <div>
@@ -40,7 +40,7 @@ export default {
           company_logo:
             'https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Starbucks_Corporation_Logo_2011.svg/640px-Starbucks_Corporation_Logo_2011.svg.png',
           company_description: 'Investing. Empowered.',
-          session_date: '2022-12-08',
+          session_date: '2022-12-11',
           start_time: '11:00 AM',
           end_time: '11:30 AM',
           zoom_link: 'https://zoom.us/j/1234567890?pwd=1234567890',
@@ -51,7 +51,7 @@ export default {
           company_logo:
             'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSi16u9yD2j4H1UhDIEcw6JxbNjBvShnDRL6_-17iNKjiXbQgFQpM0yQzPa7SDNLU3JeVs&usqp=CAU',
           company_description: 'E-Learning',
-          session_date: '2022-12-08',
+          session_date: '2022-12-11',
           start_time: '12:30 PM',
           end_time: '1:30 PM',
           zoom_link: 'https://zoom.us/j/1234567890?pwd=1234567890',
@@ -62,7 +62,7 @@ export default {
           company_logo:
             'https://img.freepik.com/premium-vector/saudi-arabia-tour-travel-logo-umrah-hajj-company-icon_18099-3718.jpg',
           company_description: 'The Evolution of A Revolution',
-          session_date: '2022-12-09',
+          session_date: '2022-12-12',
           start_time: '8:00 AM',
           end_time: '8:30 AM',
           zoom_link: 'https://zoom.us/j/1234567890?pwd=1234567890',
@@ -73,7 +73,7 @@ export default {
           company_logo:
             'https://miro.medium.com/max/936/1*dn6zull3VcGzGMVDdjYItA.jpeg',
           company_description: 'الشوبنغ لعبتنا - Shopping is our thing',
-          session_date: '2022-12-10',
+          session_date: '2022-12-13',
           start_time: '9:00 AM',
           end_time: '9:30 AM',
           zoom_link: 'https://zoom.us/j/1234567890?pwd=1234567890',
@@ -83,7 +83,7 @@ export default {
           company_name: 'Nitx',
           company_logo: 'https://nitx.io/img/brand/favicon.png',
           company_description: 'Fast Software Managment.',
-          session_date: '2022-12-11',
+          session_date: '2022-12-14',
           start_time: '2:00 PM',
           end_time: '2:30 PM',
           zoom_link: 'https://zoom.us/j/1234567890?pwd=1234567890',
@@ -93,7 +93,7 @@ export default {
           company_name: 'Plando',
           company_logo: 'https://plando.com.sa/assets/images/favicon.webp',
           company_description: 'Digital Solution Provider',
-          session_date: '2022-12-11',
+          session_date: '2022-12-14',
           start_time: '3:00 PM',
           end_time: '3:30 PM',
           zoom_link: 'https://zoom.us/j/1234567890?pwd=1234567890',
@@ -104,7 +104,7 @@ export default {
           company_logo:
             'https://logestechs.com/wp-content/uploads/2020/04/logo_small-150x150.png',
           company_description: 'Dilivery Managment Software',
-          session_date: '2022-12-11',
+          session_date: '2022-12-14',
           start_time: '4:00 PM',
           end_time: '4:30 PM',
           zoom_link: 'https://zoom.us/j/1234567890?pwd=1234567890',
@@ -115,7 +115,7 @@ export default {
           company_logo:
             'https://cdn.mapp.sa/matajerLandingPage/img/matajerApp.png',
           company_description: 'E-Commerce Solutions Provider',
-          session_date: '2022-12-13',
+          session_date: '2022-12-15',
           start_time: '2:00 PM',
           end_time: '2:30 PM',
           zoom_link: 'https://zoom.us/j/1234567890?pwd=1234567890',
@@ -125,7 +125,7 @@ export default {
           company_name: 'Saaei - ساعي ',
           company_logo: 'https://saaei.co/assets/img/logo_crop.png',
           company_description: 'Real Estate Digital Solutions',
-          session_date: '2022-12-13',
+          session_date: '2022-12-15',
           start_time: '3:00 PM',
           end_time: '3:30 PM',
           zoom_link: 'https://zoom.us/j/1234567890?pwd=1234567890',
@@ -135,7 +135,7 @@ export default {
           company_name: 'Travel.it',
           company_logo: 'https://travel-it.today/favicon-32x32.png',
           company_description: 'Explore the world through Travel.it',
-          session_date: '2022-12-14',
+          session_date: '2022-12-16',
           start_time: '3:00 PM',
           end_time: '3:30 PM',
           zoom_link: 'https://zoom.us/j/1234567890?pwd=1234567890',
@@ -146,7 +146,7 @@ export default {
           company_logo:
             'https://www.dadan.io/wp-content/uploads/cropped-favicon-96x96-1-32x32.png',
           company_description: 'Free Screen & Video Recording Software',
-          session_date: '2022-12-14',
+          session_date: '2022-12-16',
           start_time: '4:00 PM',
           end_time: '4:30 PM',
           zoom_link: 'https://zoom.us/j/1234567890?pwd=1234567890',
@@ -157,7 +157,7 @@ export default {
           company_logo:
             'https://wazen.sa/wp-content/uploads/2022/11/cropped-wazen-icon-200X200-32x32.png',
           company_description: 'Develop Your Business Today',
-          session_date: '2022-12-14',
+          session_date: '2022-12-16',
           start_time: '5:00 PM',
           end_time: '5:30 PM',
           zoom_link: 'https://zoom.us/j/1234567890?pwd=1234567890',
@@ -168,7 +168,7 @@ export default {
           company_logo:
             'https://uploads-ssl.webflow.com/5f6dbe7699ea057eaf35f8a4/63386807a48ee39802e2abba_qlogo.png',
           company_description: 'Grow Your Audiance with ease.',
-          session_date: '2022-12-14',
+          session_date: '2022-12-16',
           start_time: '6:00 PM',
           end_time: '6:30 PM',
           zoom_link: 'https://zoom.us/j/1234567890?pwd=1234567890',
