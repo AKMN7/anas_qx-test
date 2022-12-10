@@ -92,7 +92,7 @@ export default {
           session_id: 'f6ab638c-eec6-4878-9cf9-c2a204cfa0ad',
           company_name: 'Plando',
           company_logo: 'https://plando.com.sa/assets/images/favicon.webp',
-          company_description: 'Digital Solution Provider',
+          company_description: 'Native Digital Solutions Provider',
           session_date: '2022-12-14',
           start_time: '3:00 PM',
           end_time: '3:30 PM',
