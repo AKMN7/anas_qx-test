@@ -57,15 +57,23 @@ export default {
       this.dates = []
       // Store the upcoming seven days using moment.js
       for (let i = 0; i < 7; i++) {
-        const dateString = moment().add(i, 'days').format('YYYY-MM-DD')
+        const date = moment().add(i, 'days').format('YYYY-MM-DD')
         this.dates.push({
-          fullDate: dateString,
-          dayName: moment(dateString).isSame(moment(), 'days')
-            ? 'Today'
-            : moment(dateString).format('ddd'),
-          dayNumber: moment(dateString).format('DD'),
+          fullDate: date,
+          dayName: this.getDayName(date),
+          dayNumber: this.getDayNumber(date),
         })
       }
+    },
+    // Return approprite string to disply as a day name
+    getDayName(date) {
+      return moment(date).isSame(moment(), 'days')
+        ? 'Today'
+        : moment(date).format('ddd')
+    },
+    // Get the number of day passed
+    getDayNumber(date) {
+      return moment(date).format('DD')
     },
     // Fire changeDay emit while passing the newly selected date
     getNewData(splide, prev, next) {

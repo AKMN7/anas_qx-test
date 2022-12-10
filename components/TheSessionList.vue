@@ -7,7 +7,7 @@
     <div
       v-for="session in sessions"
       :key="session.session_id"
-      class="keep-ltr session w-full cursor-pointer rounded-xl border border-lightPurpleGrey p-3 text-base-color"
+      class="keep-ltr session h-fit w-full cursor-pointer rounded-xl border border-lightPurpleGrey p-3 text-base-color"
       :class="{
         selectedSession: session.company_name === selectedSession,
       }"
